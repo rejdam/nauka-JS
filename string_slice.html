@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getEmailParts(email) {
+            user = email.slice(0, email.indexOf("@"))
+            if (email.indexOf("@") == -1){ return "null" }
+            domainName = email.slice(email.indexOf("@")+1,email.indexOf("."))
+            if (email.indexOf(".",email.indexOf("@")) == -1){ return "null" }
+            domainExt = email.slice(email.indexOf(".")+1)
+            return `nazwa: ${user}
+            domena: ${domainName}
+            ext: ${domainExt}`
+            /*return {     TAK POWINNO BYC
+                user: user,
+                domainName: domainName,f
+                domainExt: domainExt
+            } */
+
+        }
+
+        let a = getEmailParts("ola@domenac.om")
+        console.log(a)
+
+
+    </script>
+</body>
+</html>

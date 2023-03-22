@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getEmailParts(email){
+            let abc = email.indexOf(".") - email.length
+            let obj = {
+                parts: email.split("@"),
+                name: email.substring(0, email.indexOf("@")),
+                domain: email.substr(email.indexOf("@")+1, email.indexOf(".")-1-email.indexOf("@") ),
+                domainExt: email.slice((abc))
+                
+            }
+            return obj
+        }
+        console.log(getEmailParts("damian@rejman.pl"))
+
+        let data = Array.of(5)
+        let data1 = [1,2,3,4,5,6,7,8]
+        data[2] = 6
+        console.log(data)
+
+
+        let a = data1.reverse()
+        console.log(a)
+        console.log(typeof data1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="capital">Capital:</label>
+    <input type="text" name="" id="capital"><br><br>
+
+    <label for="num-years">Number of Years:</label>
+    <input type="text" name="" id="num-years"><br><br>
+
+    <label for="interest-rate">rate:</label>
+    <input type="text" name="" id="interest-rate"><br><br>
+
+    <label for="final-amount">Final amount:</label>
+    <input type="text" name="" id="final-amount" disabled><br><br>
+
+    <button id="calculate">Calculate</button>
+
+    <script>
+
+        document.getElementById("calculate")
+                .addEventListener("click", calculate);
+
+        function calculate() {
+            console.log("calculate")
+
+            var c = document.getElementById("capital").value
+            var rate = document.getElementById("interest-rate").value / 100
+            var n = 12; // document.getElementById("compound-interest").value
+            var y = document.getElementById("num-years").value
+            var finalMoney = c * Math.pow( (1+ (rate /n)), (n * y) )
+            document.getElementById("final-amount").value = finalMoney.toFixed(2)
+        }
+        
+
+    </script>
+</body>
+</html>
